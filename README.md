@@ -24,7 +24,7 @@
 
 其余驱动按照教程即可
 
-![联想Lenovo小新I2000黑苹果首发体验之旅01](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8501.png)
+![联想Lenovo小新I2000黑苹果首发体验之旅01](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8501.webp)
 
 <center>联想（Lenovo)小新出色版I2000 示例图片</center>
 
@@ -70,71 +70,71 @@
 
 进入Bios将你制作的U盘镜像设置为开机启动（因为后面安装过程中电脑会多次重启，每次都要通过U盘引导进苹果系统，建议将U盘设置为第一顺位启动）。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅02](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8502.jpg)
+![联想Lenovo小新I2000黑苹果首发体验之旅02](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8502.webp)
 
 <center>点击BigSur安装（最新版为Monterey)</center>
 
 第一遍进度条：你的EFI文件大概率会是不完美的。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅03](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8503.jpg)
+![联想Lenovo小新I2000黑苹果首发体验之旅03](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8503.webp)
 
 在这会卡第一次**[EB|#LOG:EXITBS:START]，**此时你也可以开启啰嗦模式，安装过程中不再全程GUI界面，屏幕上间歇会疯狂跑代码，同时可以清晰看到具体卡在哪一位置，报什么错。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅04](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8504.png)
+![联想Lenovo小新I2000黑苹果首发体验之旅04](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8504.webp)
 
 将boot－ａｒｇｓ那一项的值改为－ｖ，即可开启啰嗦模式。
 
 用OCAuxiliaryTools这个软件去修改EFI>OC文件下的config.plist文件。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅05](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8505.png)
+![联想Lenovo小新I2000黑苹果首发体验之旅05](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8505.webp)
 
 上图打红叉的那一项不要勾选，这一项意思是在引导中设置默认引导项，字面意思似乎是和开机引导有关。不过不用担心，即使你是在一块硬盘上安装双系统，也可以用下图这个软件设置开机引导界面来切换Windows和ｍac系统。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅06](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8506.png)
+![联想Lenovo小新I2000黑苹果首发体验之旅06](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8506.webp)
 
 在这一步之前是寻找宗卷，大概率还是会卡一次。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅07](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8507.jpg)
+![联想Lenovo小新I2000黑苹果首发体验之旅07](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8507.webp)
 
 <center>最新版为Monterey</center>
 
 解决办法，按照下图勾选，去掉多余的勾选项。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅08](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8508.png)
+![联想Lenovo小新I2000黑苹果首发体验之旅08](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8508.webp)
 
 然后就可以进行下一步了，将你划分出的空闲硬盘抹除成苹果的格式，退出磁盘工具，下面安装就会顺利进行。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅09](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8509.jpg)
+![联想Lenovo小新I2000黑苹果首发体验之旅09](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8509.webp)
 
-![联想Lenovo小新I2000黑苹果首发体验之旅10](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8510.jpg)
+![联想Lenovo小新I2000黑苹果首发体验之旅10](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8510.webp)
 
-![联想Lenovo小新I2000黑苹果首发体验之旅11](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8511.jpg)
+![联想Lenovo小新I2000黑苹果首发体验之旅11](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8511.webp)
 
-![联想Lenovo小新I2000黑苹果首发体验之旅12](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8512.jpg)
-
-<center>最新版为Monterey</center>
-
-
-![联想Lenovo小新I2000黑苹果首发体验之旅13](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8513.jpg)
+![联想Lenovo小新I2000黑苹果首发体验之旅12](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8512.webp)
 
 <center>最新版为Monterey</center>
 
 
-![联想Lenovo小新I2000黑苹果首发体验之旅14](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8514.jpg)
+![联想Lenovo小新I2000黑苹果首发体验之旅13](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8513.webp)
 
 <center>最新版为Monterey</center>
 
 
-![联想Lenovo小新I2000黑苹果首发体验之旅15](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8515.jpg)
+![联想Lenovo小新I2000黑苹果首发体验之旅14](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8514.webp)
 
 <center>最新版为Monterey</center>
 
 
-![联想Lenovo小新I2000黑苹果首发体验之旅16](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8516.jpg)
+![联想Lenovo小新I2000黑苹果首发体验之旅15](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8515.webp)
 
-![联想Lenovo小新I2000黑苹果首发体验之旅17](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8517.jpg)
+<center>最新版为Monterey</center>
 
-![联想Lenovo小新I2000黑苹果首发体验之旅18](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8518.png)
+
+![联想Lenovo小新I2000黑苹果首发体验之旅16](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8516.webp)
+
+![联想Lenovo小新I2000黑苹果首发体验之旅17](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8517.webp)
+
+![联想Lenovo小新I2000黑苹果首发体验之旅18](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8518.webp)
 
 至此，勇敢的少年恭喜你，你的黑苹果已经初步安装成功了，后面跟着系统一步步设置就可以了。
 
@@ -154,12 +154,12 @@
 >
 > 通过`DiskGenius`的WinPE版，对整个磁盘进行重新划分，建立300MB大小的ESP/MSR分区。
 >
-> ![联想Lenovo小新I2000黑苹果首发体验之旅19](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8519.png)
+> ![联想Lenovo小新I2000黑苹果首发体验之旅19](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8519.webp)
 >
-> ![联想Lenovo小新I2000黑苹果首发体验之旅20](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8520.png)
+> ![联想Lenovo小新I2000黑苹果首发体验之旅20](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8520.webp)
 
 第二种方法：将Windows启动文件和黑苹果的EFI文件放在同一个ESP里。需要事先划分出300Mb以上的空间，装完Windows系统后再安装黑苹果系统。将黑苹果的EFI引导文件中整个OC文件夹拷贝至ESP文件夹里的EFI文件夹内，然后用DiskGenius把黑苹果引导添加至开机启动项即可实现开机时双系统选择启动。
 
-> ![联想Lenovo小新I2000黑苹果首发体验之旅21](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8521.png)
+> ![联想Lenovo小新I2000黑苹果首发体验之旅21](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8521.webp)
 >
-> ![联想Lenovo小新I2000黑苹果首发体验之旅22](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8522.png)
+> ![联想Lenovo小新I2000黑苹果首发体验之旅22](https://picgo-1.pages.dev//%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8522.webp)
