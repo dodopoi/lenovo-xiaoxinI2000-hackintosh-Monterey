@@ -1,5 +1,4 @@
 
-
 #### 写在前面：
 
 **文末有EFI文件可直接拿来使用**
@@ -9,7 +8,6 @@
 > EFI更新内容：
 >
 > 修复开机时屏幕上会显示几行代码的问题。
->
 
 首先，感谢国光的黑苹果安装教程，采用了OpenCore的引导安装方式（如果对EFI文件制作感兴趣，请移步至教程https://apple.sqlsec.com）。 其次，这个EFI引导文件只适用于联想小新i2000，已经验证能够在机器上稳定运行。最后，在制作黑苹果U盘引导镜像时最好使用Monterey版本(只要大版本号是12即可），系统可以在大版本号内进行更新，不用更改EFI文件，但是在跨大版本更新或者降级时，需要对EFI文件进行包括但不限于网卡、蓝牙等驱动的更新，祝有需要的朋友使用愉快。
 
@@ -23,7 +21,7 @@
 
 其余驱动按照教程即可
 
-![联想Lenovo小新I2000黑苹果首发体验之旅01](https://tuchuang.guoke.co/guoketuchuang/2025/07/f66d103ab659123bc315adf31cf3c376.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅01](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8501.webp)
 
 <center>联想（Lenovo)小新出色版I2000 示例图片</center>
 
@@ -64,77 +62,76 @@
 > 共享模块正常
 >
 > \``````
->
 
 按照教程（https://apple.sqlsec.com） 的流程走完，到实际安装黑苹果时遇到了两次卡**[EB|#LOG:EXITBS:START]**，是卡在第一步的白苹果logo，第二次卡在安装MacOS的前一步加载硬盘（界面是MacOS恢复，寻找宗卷），解决办法见下图（以下安装过程的界面图片引自教程）：
 
 进入Bios将你制作的U盘镜像设置为开机启动（因为后面安装过程中电脑会多次重启，每次都要通过U盘引导进苹果系统，建议将U盘设置为第一顺位启动）。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅02](https://tuchuang.guoke.co/guoketuchuang/2025/07/8a4aa50c5c9dc00275d96322f12113c4.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅02](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8502.webp)
 
 <center>点击BigSur安装（最新版为Monterey)</center>
 
 第一遍进度条：你的EFI文件大概率会是不完美的。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅03](https://tuchuang.guoke.co/guoketuchuang/2025/07/b8a195aed9b037c35f73568ab38f58b0.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅03](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8503.webp)
 
 在这会卡第一次**[EB|#LOG:EXITBS:START]，**此时你也可以开启啰嗦模式，安装过程中不再全程GUI界面，屏幕上间歇会疯狂跑代码，同时可以清晰看到具体卡在哪一位置，报什么错。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅04](https://tuchuang.guoke.co/guoketuchuang/2025/07/66b54efb5e64e0b36567a536ed2068a8.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅04](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8504.webp)
 
 将boot－ａｒｇｓ那一项的值改为－ｖ，即可开启啰嗦模式。
 
 用OCAuxiliaryTools这个软件去修改EFI>OC文件下的config.plist文件。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅05](https://tuchuang.guoke.co/guoketuchuang/2025/07/550787d2f8b3fa50ebc36c92d27cb5cc.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅05](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8505.webp)
 
 上图打红叉的那一项不要勾选，这一项意思是在引导中设置默认引导项，字面意思似乎是和开机引导有关。不过不用担心，即使你是在一块硬盘上安装双系统，也可以用下图这个软件设置开机引导界面来切换Windows和ｍac系统。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅06](https://tuchuang.guoke.co/guoketuchuang/2025/07/5ae2967c207d2ff1faac773c95943fbd.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅06](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8506.webp)
 
 在这一步之前是寻找宗卷，大概率还是会卡一次。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅07](https://tuchuang.guoke.co/guoketuchuang/2025/07/faf5033b1b326168ed11e48e24d58f6c.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅07](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8507.webp)
 
 <center>最新版为Monterey</center>
 
 解决办法，按照下图勾选，去掉多余的勾选项。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅08](https://tuchuang.guoke.co/guoketuchuang/2025/07/dcc1247e100dba5f93b4ba280a7cc90b.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅08](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8508.webp)
 
 然后就可以进行下一步了，将你划分出的空闲硬盘抹除成苹果的格式，退出磁盘工具，下面安装就会顺利进行。
 
-![联想Lenovo小新I2000黑苹果首发体验之旅09](https://tuchuang.guoke.co/guoketuchuang/2025/07/c3dedaea9760f8d45d721fe2a92549dc.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅09](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8509.webp)
 
-![联想Lenovo小新I2000黑苹果首发体验之旅10](https://tuchuang.guoke.co/guoketuchuang/2025/07/1e44db6115d9bb76c80e57605976ca83.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅10](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8510.webp)
 
-![联想Lenovo小新I2000黑苹果首发体验之旅11](https://tuchuang.guoke.co/guoketuchuang/2025/07/87e3c1b8774f49f4c3eeb1a33d9f7342.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅11](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8511.webp)
 
-![联想Lenovo小新I2000黑苹果首发体验之旅12](https://tuchuang.guoke.co/guoketuchuang/2025/07/9741664f8d491b4c43894057c8902b74.webp)
-
-<center>最新版为Monterey</center>
-
-
-![联想Lenovo小新I2000黑苹果首发体验之旅13](https://tuchuang.guoke.co/guoketuchuang/2025/07/90cc53a5d41324af47c92a4f3c506ba3.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅12](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8512.webp)
 
 <center>最新版为Monterey</center>
 
 
-![联想Lenovo小新I2000黑苹果首发体验之旅14](https://tuchuang.guoke.co/guoketuchuang/2025/07/62743d0a12ceb51a03cb11a53ffc6698.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅13](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8513.webp)
 
 <center>最新版为Monterey</center>
 
 
-![联想Lenovo小新I2000黑苹果首发体验之旅15](https://tuchuang.guoke.co/guoketuchuang/2025/07/089105979a1c4147a715010ed0e86bcc.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅14](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8514.webp)
 
 <center>最新版为Monterey</center>
 
 
-![联想Lenovo小新I2000黑苹果首发体验之旅16](https://tuchuang.guoke.co/guoketuchuang/2025/07/c9f2e860e11ceb6339ca6c3aa380c570.webp)
+![联想Lenovo小新I2000黑苹果首发体验之旅15](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8515.webp)
 
-![联想Lenovo小新I2000黑苹果首发体验之旅17](https://tuchuang.guoke.co/guoketuchuang/2025/07/c5c13ed267104d3eeacddaf3d11bd374.webp)
+<center>最新版为Monterey</center>
 
-![联想Lenovo小新I2000黑苹果首发体验之旅18](https://tuchuang.guoke.co/guoketuchuang/2025/07/3edc4d50cccf7139ead87a4a488a37d1.webp)
+
+![联想Lenovo小新I2000黑苹果首发体验之旅16](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8516.webp)
+
+![联想Lenovo小新I2000黑苹果首发体验之旅17](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8517.webp)
+
+![联想Lenovo小新I2000黑苹果首发体验之旅18](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8518.webp)
 
 至此，勇敢的少年恭喜你，你的黑苹果已经初步安装成功了，后面跟着系统一步步设置就可以了。
 
@@ -154,12 +151,12 @@
 >
 > 通过`DiskGenius`的WinPE版，对整个磁盘进行重新划分，建立300MB大小的ESP/MSR分区。
 >
-> ![联想Lenovo小新I2000黑苹果首发体验之旅19](https://tuchuang.guoke.co/guoketuchuang/2025/07/86914aff0d327fc33024fcdec942a0b5.webp)
+> ![联想Lenovo小新I2000黑苹果首发体验之旅19](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8519.webp)
 >
-> ![联想Lenovo小新I2000黑苹果首发体验之旅20](https://tuchuang.guoke.co/guoketuchuang/2025/07/234cb04e7372e53cec737abb4a220c40.webp)
+> ![联想Lenovo小新I2000黑苹果首发体验之旅20](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8520.webp)
 
 第二种方法：将Windows启动文件和黑苹果的EFI文件放在同一个ESP里。需要事先划分出300Mb以上的空间，装完Windows系统后再安装黑苹果系统。将黑苹果的EFI引导文件中整个OC文件夹拷贝至ESP文件夹里的EFI文件夹内，然后用DiskGenius把黑苹果引导添加至开机启动项即可实现开机时双系统选择启动。
 
-> ![联想Lenovo小新I2000黑苹果首发体验之旅21](https://tuchuang.guoke.co/guoketuchuang/2025/07/bff2b3143699692770e37bb1f5ce180e.webp)
+> ![联想Lenovo小新I2000黑苹果首发体验之旅21](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8521.webp)
 >
-> ![联想Lenovo小新I2000黑苹果首发体验之旅22](https://tuchuang.guoke.co/guoketuchuang/2025/07/8e9424fba692a32aa2fb6d060804239b.webp)
+> ![联想Lenovo小新I2000黑苹果首发体验之旅22](https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8522.webp)
